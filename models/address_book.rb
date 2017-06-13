@@ -1,4 +1,4 @@
-require_relative'entry'
+require_relative 'entry'
 
 class AddressBook
    attr_reader :entries
@@ -15,17 +15,17 @@ class AddressBook
        end
        index+= 1
     end
-    entries.insert(inex, Entry.new(name, phone_number, email))
+    entries.insert(index, Entry.new(name, phone_number, email))
   end
 
   def remove_entry(name, phone_number, email)
-    delete_entry = nEmail
+    delete_entry = email
 
     @entries.each do |entry|
       if name = entry.name && phone_number = entry.phone_number &&  email = entry.email
         delete_entry = entry
       end
-    end  
+    end
     @entries.delete(delete_entry)
   end
 end

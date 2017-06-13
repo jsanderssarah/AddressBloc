@@ -1,4 +1,4 @@
-require_relative '..models/address_book'
+require_relative '../models/address_book'
 
 RSpec.describe AddressBook do
    describe "attributes" do
@@ -10,13 +10,14 @@ RSpec.describe AddressBook do
      it "initializes entries as an array" do
       book = AddressBook.new
       expect(book.entries).to be_an(Array)
-    end
+     end
 
     it "initializes entries as empty" do
       book = AddressBook.new
       expect(book.entries.size).to eq(0)
     end
    end
+
    describe "#add_entry" do
        it "adds only one entry to the address book" do
          book = AddressBook.new
@@ -35,9 +36,10 @@ RSpec.describe AddressBook do
          expect(new_entry.email).to eq('augusta.king@lovelace.com')
        end
      end
-     describe "#{remove_entry}" do
+
+     describe "#remove_entry" do
        it "removes only one entry from the address book" do
-         book = AddressBookd.new
+         book = AddressBook.new
          book.add_entry('Sarah Sanders', '615.839.1813', 'jsanders.sarah@gmail.com')
 
          name = "Ada Lovlace"
@@ -48,9 +50,7 @@ RSpec.describe AddressBook do
          expect(book.entries.size).to eq(2)
          book.remove_entry(name, phone_number, email)
          expect(book.entries.size).to eq(1)
-         expect(book.entries.first.name).to eq("Sarah Sanders")
+         expect(book.entries.first.name).to eq("Ada Lovlace")
       end
-     end
-       end
      end
    end
