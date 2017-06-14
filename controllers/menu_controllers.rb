@@ -45,10 +45,8 @@ require_relative 'controllers/menu_controller'
         main_menu
       when 5
         system "clear"
-        puts "Please enter number here: "
-        number = gets.chomp
-        #if valid input view_entry
-        # else puts "That is not a valid entry"
+        entry_n_submenu
+        main_menu
       when 6
         puts "Good-bye!"
 
@@ -58,6 +56,20 @@ require_relative 'controllers/menu_controller'
         puts "Sorry, that is not a valid input"
         main_menu
     end
+  end
+
+  def entry_n_submenu
+    print "Entry number to view: "
+    gets.chomp.to_i
+      if seleciton < @ address_book.entries.count
+        puts @address_book.entries[selection]
+        puts "Press enter to return to the main menu"
+        gets.chomp
+        system "clear"
+      else
+        puts "#{selection} is not a valid input"
+        entry_n_submenu
+      end
   end
 
   def view_all_entries
