@@ -47,8 +47,8 @@ require_relative 'controllers/menu_controller'
         system "clear"
         puts "Please enter number here: "
         number = gets.chomp
-        
-
+        #if valid input view_entry
+        # else puts "That is not a valid entry"
       when 6
         puts "Good-bye!"
 
