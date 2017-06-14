@@ -47,7 +47,7 @@ require_relative 'controllers/menu_controller'
         system "clear"
         puts "Please enter number here: "
         number = gets.chomp
-        
+
 
       when 6
         puts "Good-bye!"
@@ -71,7 +71,7 @@ require_relative 'controllers/menu_controller'
     system "clear"
     puts "End of entries"
   end
-
+  
   def create_entry
     system "clear"
     puts "New AddressBloc Entry"
