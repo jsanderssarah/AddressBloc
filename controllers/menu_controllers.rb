@@ -20,7 +20,8 @@ require_relative 'controllers/menu_controller'
      puts "2 - Create an entry"
      puts "3 - Search for an entry"
      puts "4 - Import entries from a CSV"
-     puts "5 - Exit"
+     puts "5 - View enrty number n"
+     puts "6 - Exit"
      print "Enter your selection: "
 
 
@@ -43,6 +44,12 @@ require_relative 'controllers/menu_controller'
         read_csv
         main_menu
       when 5
+        system "clear"
+        puts "Please enter number here: "
+        number = gets.chomp
+        
+
+      when 6
         puts "Good-bye!"
 
         exit(0)
@@ -108,5 +115,5 @@ require_relative 'controllers/menu_controller'
       puts "#{selection} is not a valid input"
       entry_submenu(entry)
     end
-  end                
+  end
 end
