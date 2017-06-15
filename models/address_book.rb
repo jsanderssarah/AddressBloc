@@ -28,7 +28,7 @@ require "csv"
       add_entry(row_hash["name"], row_hash)
       add_entry(row_hash["name"], row_hash["phone_number"], row_hash["email"])
      end
-  end  
+  end
 
   def remove_entry(name, phone_number, email)
     delete_entry = email
@@ -39,5 +39,25 @@ require "csv"
       end
     end
     @entries.delete(delete_entry)
+  end
+
+  def binary_search
+    lower = 0
+     upper = entries.length - 1
+
+     while lower <= upper
+       mid = (lower + upper) / 2
+       mid_name = entries[mid].name
+
+       if name == mid_name
+         return entries[mid]
+       elsif name < mid_name
+         upper = mid - 1
+       elsif name > mid_name
+         lower = mid + 1
+       end
+     end
+
+     return nil
   end
 end
