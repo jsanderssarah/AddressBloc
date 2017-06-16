@@ -196,5 +196,13 @@ require_relative 'controllers/menu_controller'
         puts entry.to_s
         search_submenu(entry)
       end
-   end  
+   end
+
+   def demolish_entries(file_name)
+     puts "enter address book file name to delete: "
+     file_name = gets.chomp
+
+     address_book.delete(file_name)
+     puts "#{file_name} has been deleted"
+   end
 end
