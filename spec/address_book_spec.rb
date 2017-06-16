@@ -9,6 +9,17 @@ RSpec.describe AddressBook do
       expect(entry.email).to eq expected_email
    end
 
+   context "#nuke" do
+     it "should delete all entries" do
+       book.add_entry("Breen Bentzen, 777.555.4444, breen@cuties.com")
+       book.add_entry("Breen Bentzen, 777.555.4444, breen@cuties.com")
+       book.add_entry("Breen Bentzen, 777.555.4444, breen@cuties.com")
+
+       book.demolish_entries
+       expect(book.entries.size).to eq 0
+     end
+   end
+
    describe "attributes" do
      it "responds to entries" do
        expect(book).to respond_to(:entries)
@@ -139,7 +150,6 @@ RSpec.describe AddressBook do
          entry = book.binary_search("Billy")
          expect(entry).to be_nil
        end
-       
      end
 
   end

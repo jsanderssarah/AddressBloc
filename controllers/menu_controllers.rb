@@ -21,7 +21,8 @@ require_relative 'controllers/menu_controller'
      puts "3 - Search for an entry"
      puts "4 - Import entries from a CSV"
      puts "5 - View enrty number n"
-     puts "6 - Exit"
+     puts "6 - Delete all entries"
+     puts "7 - Exit"
      print "Enter your selection: "
 
 
@@ -47,9 +48,12 @@ require_relative 'controllers/menu_controller'
         system "clear"
         puts "Please enter number here: "
         number = gets.chomp
-
-
       when 6
+        system "clear"
+        @address_book.demolish_entries
+        puts "All entries deleted"
+        main_menu
+      when 7
         puts "Good-bye!"
 
         exit(0)
@@ -199,10 +203,6 @@ require_relative 'controllers/menu_controller'
    end
 
    def demolish_entries(file_name)
-     puts "enter address book file name to delete: "
-     file_name = gets.chomp
-
-     address_book.delete(file_name)
-     puts "#{file_name} has been deleted"
+     @entries = []
    end
 end
